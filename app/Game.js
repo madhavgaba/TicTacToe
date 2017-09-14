@@ -3,7 +3,7 @@ import  { AppRegistry,StyleSheet,View,Text,Button, TouchableOpacity,Alert,Image,
 import {height, width} from 'react-native-dimension';
 import {StackNavigator} from 'react-navigation';
 import styles from './style';
-
+console.disableYellowBox = true;
 export default class App extends Component{
 
 chance(){
@@ -142,12 +142,12 @@ noMoves(){
     return true;
 }
 bestMove(){
+    if(this.state.turns == 1){
+            return 1;
+    }
     let best = -1000, index=-1;
     let pic = this.state.pic;
     let user = this.state.user;
-    if(this.state.turns == 1){
-        return 1;
-    }
     for(let i=1;i<=9;i++){
         if(pic[i] == require('../white.jpg')){
            if(user == 1){
@@ -257,6 +257,7 @@ restart(){
         super();
         this.state = {
             pic: [], board: [], flag: 1, user: 0, comp: 0, turns: 1, isStart: false, win: false
+            
         }
         this.check = this.check.bind(this);
         this.minimax = this.minimax.bind(this);
@@ -285,13 +286,22 @@ render()
         }
         if(user == 1 && isStart){
             if(turn==2 || turn == 4 || turn == 6 || turn ==8){
-                this.compMove();
-                this.state.turns += 1;
+                setTimeout( () => {
+                    this.compMove();
+                },800);
+                this.state.turns+=1;
             }
         }
         else if(comp == 1 && isStart){
             if(turn == 1 || turn == 3 || turn == 5 || turn == 7 || turn == 9){
-                this.compMove();
+                if(turn == 1){
+                        this.compMove();
+                }
+                else{
+                    setTimeout( () => {
+                        this.compMove();
+                    },800);
+                }
                 this.state.turns += 1;
             }
         }
