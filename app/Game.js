@@ -247,7 +247,7 @@ restart(){
         'Restart Game',
         'Do you want to restart?',
         [
-            {text: 'Yes', onPress: () => navigate('Game')},
+            {text: 'Yes', onPress: () => this.setState({pic: [], board: [], flag: 1, user: 0, comp: 0, turns: 1, isStart: false, win: false })},
             {text: 'No'},
         ]
     )
@@ -256,8 +256,7 @@ restart(){
     constructor(){
         super();
         this.state = {
-            pic: [], board: [], flag: 1, user: 0, comp: 0, turns: 1, isStart: false, win: false
-            
+            pic: [], board: [], flag: 1, user: 0, comp: 0, turns: 1, isStart: false, win: false   
         }
         this.check = this.check.bind(this);
         this.minimax = this.minimax.bind(this);
