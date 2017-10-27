@@ -3,7 +3,7 @@ import  { AppRegistry,StyleSheet,View,Text,Button, TouchableOpacity,Alert,Image,
 import {height, width} from 'react-native-dimension';
 import {StackNavigator} from 'react-navigation';
 import styles from './style';
-console.disableYellowBox = true;
+
 export default class App extends Component{
 
 chance(){
@@ -100,7 +100,7 @@ minimax(isComp){
         return 0;
     }
     if(isComp == true){
-        let comp = -1000;
+        let comp = -10;
         for(let i=1;i<=9;i++){
                 if(pic[i] == require('../white.jpg')){
                     if(user == 1){
