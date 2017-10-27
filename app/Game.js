@@ -3,7 +3,7 @@ import  { AppRegistry,StyleSheet,View,Text,Button, TouchableOpacity,Alert,Image,
 import {height, width} from 'react-native-dimension';
 import {StackNavigator} from 'react-navigation';
 import styles from './style';
-console.disableYellowBox = true;
+
 export default class App extends Component{
 
 chance(){
