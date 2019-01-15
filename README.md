@@ -1,6 +1,6 @@
 # TicTacToe
 
-Simple impelentation of TicTacToe game with artificial intelligence (uses backtracking), run the following instructions to install:
+Simple impelentation of TicTacToe game with artificial intelligence, run the following instructions to install:
 
 1. git clone https://github.com/madhavgaba/TicTacToe.git  
 2. cd TicTacToe  
